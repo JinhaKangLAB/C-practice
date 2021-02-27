@@ -1,26 +1,112 @@
 #include <stdio.h>
-//Minimun number and Maximum number
-
-/*int MaxNum (int n1, int n2, int n3)
+//Finding Max Number and Min Number among three differnet integers.
+/*int Add(int num1, int num2)
 {
-		if(n1>n2)
-			return (n1>n3) ? n1 : n3;
-		else
-			return (n2>n3) ? n2 : n3;
+	return num1+num2;
 }
-int MinNum (int n1, int n2, int n3)
+void ShowAddResult(int num)
 {
-	if(n1<n2)
-		return (n1<n3) ? n1 : n3;
+	printf("Result : %d\n", num);
+}
+int ReadNum(void)
+{
+	int num;
+	scanf("%d",&num);
+	return num;
+}
+void HowToUseThisProg(void)
+{
+	printf("Enter two integers, result will come out.\n");
+}
+int main(void){
+	int result,num1,num2;
+	HowToUseThisProg();
+	num1=ReadNum();
+	num2=ReadNum();
+	result=Add(num1,num2);
+	ShowAddResult(result);
+	return 0;
+} */
+/*int MaxNum(int n1, int n2, int n3){
+	if (n1>n2)
+		return (n1>n3)?n1:n3;
+	else 
+		return (n2>n3)?n2:n3;
+}
+int MinNum(int n1, int n2, int n3){
+	if (n1<n2)
+		return (n1<n3)?n1:n3;
+	else 
+		return (n2<n3)?n2:n3;
+}
+	int main(void){
+	int num1, num2, num3;
+	printf("Enter three different integers\n");
+	scanf("%d %d %d", &num1, &num2, &num3);
+	printf("Max Number is : %d\n", MaxNum(num1,num2,num3));
+	printf("Min Number is : %d\n", MinNum(num1,num2,num3));
+	return 0;
+} */
+
+//Celsius to Fahrenheit && Fahrenheit to Celsius
+/*double CelToFah (double c){
+	return 1.8*c+32;
+
+}
+double FahToCel (double f){
+	return (f-32)/1.8;
+}
+int main(void){
+	int sel;
+	double num;
+	printf("1. Celsius to Fahrenheit 2. Fahrenheit to Celsius\n");
+	printf("Select>>");
+	scanf("%d", &sel);
+
+	if(sel==1)
+	{
+		printf("Celsius : ");
+		scanf("%lf", &num);
+		printf("Celsius to Fahrenheit : %f\n", CelToFah(num));
+	}
+	else if(sel==2)
+	{
+		printf("Fahrenheit : ");
+		scanf("%lf",&num);
+		printf("Fahrenheit to Celsius : %f\n", FahToCel(num));
+	}
 	else
-		return (n2<n3) ? n2 : n3;
+		printf("Selection Error\n");
+	return 0;
+} */
+
+//Fibonacci numbers
+void ShowFiboSeries(int num)
+{
+	int f1=0, f2=1, f3, i;
+	if(num==1)
+		printf("%d ", f1);
+	else
+		printf(" %d %d ", f1, f2);
+
+	for(i=0; i<num-2; i++)
+	{
+		f3=f1+f2;
+		printf("%d ", f3);
+		f1=f2;
+		f2=f3;
+	}
 }
 int main(void)
 {
-	int num1, num2, num3;
-	printf("Enter three different integers. \n");
-	scanf("%d %d %d", &num1, &num2, &num3);
-	printf("Max Number is : %d ", MaxNum(num1, num2, num3));
-	printf("Minimum Number is : %d ", MinNum(num1, num2, num3));
-	return 0;
-}*/
+		int n;
+		printf("The number of Fibonacci that you would like to printout : ");
+		scanf("%d", &n);
+		if(n<1)
+		{
+			printf("Enter a number more than 1. \n");
+			return -1;
+		}
+		ShowFiboSeries(n);
+		return 0;
+}
